@@ -83,12 +83,12 @@ def main():
         if volt > 0:
             volts.append(volt)
             img = cv2.imread(full_path)
-            img = img[413:781, 1785:1967]
             if not FullRun:
-                cv2.imshow("blaj", img)
+                cv2.imshow("image", img)
                 cv2.waitKey(0)
-            thickness.append(np.mean(get_width(img)) * 4)
+            thickness.append(np.mean(get_width(img)) * 2)
 
+    # Using the data we got from the wall thickness
     plot_volt_graph(volts, thickness, yerror=2.5, xerror=0.1)
 
 
